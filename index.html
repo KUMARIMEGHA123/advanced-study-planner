@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📝 To‑Do List</h1>
+
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Enter new task" />
+      <input type="date" id="dueDate" />
+      <select id="priority">
+        <option value="low">Low</option>
+        <option value="high">High</option>
+      </select>
+      <input type="text" id="category" placeholder="Category" />
+      <button id="addTaskBtn">Add Task</button>
+    </div>
+
+    <div class="controls">
+      <button onclick="filterTasks('all')">All</button>
+      <button onclick="filterTasks('completed')">Completed</button>
+      <button onclick="filterTasks('active')">Active</button>
+      <input type="text" id="searchInput" placeholder="Search tasks" />
+      <button onclick="toggleDarkMode()">🌙</button>
+    </div>
+
+    <div class="progress">
+      <progress id="progressBar" max="100" value="0"></progress>
+      <span id="progressText">0% Completed</span>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="app.js"></script>
+  <!-- Inside <body> add at the end -->
+<script type="module" src="./components/smartSuggestions.js"></script>
+<script type="module" src="./components/focusDetection.js"></script>
+<script type="module" src="./components/chatAssistant.js"></script>
+<script type="module" src="./components/mlAnalytics.js"></script>
+
+
+</body>
+</html>
